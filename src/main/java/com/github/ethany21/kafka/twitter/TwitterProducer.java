@@ -25,10 +25,12 @@ import java.util.concurrent.TimeUnit;
 public class TwitterProducer {
     private Logger logger = LoggerFactory.getLogger(TwitterProducer.class.getName());
 
-    private String consumerKey = "RKADjHxWAMIqWXtddJ2qFkt8E";
-    private String consumerSecret = "sYIoTp2XaCSg81k4gqzcRNiiQwXVOppcS0ykhhP5UgcyLfiYe3";
-    private String token = "2975163290-9805evZsfyPIyvrdoBvBU0p5zYxSTa3HJ1kjfwm";
-    private String secret = "90J5kexpOg2yU1Yu8oz7oAZ5gLDr4Al3nRUEAbYkqilM0";
+    //https://developer.twitter.com/en/apps 의 keys and tokesd에서 serial key를 복사 붙여넣기 하면 된다
+    //깃헙에 push하기 전에는 일단 지우고 나서 업로드를 하도록 하자. 민감한 정보인데 pulic에 공개되면 안되니까
+    private String consumerKey = "";
+    private String consumerSecret = "";
+    private String token = "";
+    private String secret = "";
 
     public TwitterProducer(){}
 
