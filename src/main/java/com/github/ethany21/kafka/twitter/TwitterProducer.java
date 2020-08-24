@@ -26,11 +26,11 @@ public class TwitterProducer {
     private Logger logger = LoggerFactory.getLogger(TwitterProducer.class.getName());
 
     //https://developer.twitter.com/en/apps 의 keys and tokesd에서 serial key를 복사 붙여넣기 하면 된다
-    //깃헙에 push하기 전에는 일단 지우고 나서 업로드를 하도록 하자. 민감한 정보인데 pulic에 공개되면 안되니까
-    private String consumerKey = "";
-    private String consumerSecret = "";
-    private String token = "";
-    private String secret = "";
+    //kafka 실행 시에만 복사, 붙혀넣고 github에 push하기 전에는 일단 지우고 나서 업로드를 하도록 하자. 민감한 정보인데 pulic에 공개되면 안되니까
+    private String consumerKey = "hsI3Wui11IwgCf5lF6wV3H232";
+    private String consumerSecret = "DJUGcKjFRf9ywB53NZQJ9Wyw0M6fQ3Xl6trkuY6UPFwjxCjD2N";
+    private String token = "2975163290-kkMW59NLWMnHxfZ2JiYo7hRUdi9gG3jSK1UmqIm";
+    private String secret = "lUYgarmvbeDUtblRR2xqmmIEmQKb3hj9XhKFyX30q5VMp";
 
     public TwitterProducer(){}
 
@@ -38,7 +38,7 @@ public class TwitterProducer {
         new TwitterProducer().run();
     }
     public void run() {
-        BlockingDeque<String> messageQueue = new LinkedBlockingDeque<String>(1000);
+        BlockingDeque<String> messageQueue = new LinkedBlockingDeque<>(1000);
         // create a twitter client
         Client client = createTwitterClient(messageQueue);
 
@@ -89,7 +89,7 @@ public class TwitterProducer {
         List<Long> followings = Lists.newArrayList(1234L, 566788L);
         //트위터에서 실시간 트렌드에 올라와 있는 것을 기준으로 리스트의 원소로 넣음
         //새벽이나 아침 시간은 미국쪽 트렌드, 오후 ~ 저녁 시간에는 한국쪽 트렌드
-        List<String> terms = Lists.newArrayList("BoycottFedEx", "Snyder");
+        List<String> terms = Lists.newArrayList("Ghost of Tsushima", "Halloween", "Eslabon Armado");
         hosebirdEndpoint.followings(followings);
         hosebirdEndpoint.trackTerms(terms);
 
